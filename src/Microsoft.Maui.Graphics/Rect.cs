@@ -76,6 +76,11 @@ namespace Microsoft.Maui.Graphics
 			return !(r1 == r2);
 		}
 
+		public static Rect operator *(Rect rect, double multiplier)
+		{
+			return FromLTRB(rect.Left, rect.Top, rect.Right * multiplier, rect.Bottom * multiplier);
+		}
+
 		// Hit Testing / Intersection / Union
 		public bool Contains(Rect rect)
 		{

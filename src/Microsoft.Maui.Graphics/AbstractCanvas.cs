@@ -232,6 +232,7 @@ namespace Microsoft.Maui.Graphics
 		public abstract void SetFillPaint(Paint paint, RectF rectangle);
 
 		public abstract void DrawImage(IImage image, float x, float y, float width, float height);
+		public abstract void DrawImage(IImage image, Rect src, Rect dest);
 
 		public virtual bool RestoreState()
 		{
@@ -321,5 +322,6 @@ namespace Microsoft.Maui.Graphics
 
 		public SizeF GetStringSize(string aString, IFont font, float aFontSize, HorizontalAlignment aHorizontalAlignment, VerticalAlignment aVerticalAlignment) =>
 			_stringSizeService.GetStringSize(aString, font, aFontSize, aHorizontalAlignment, aVerticalAlignment);
+
 	}
 }

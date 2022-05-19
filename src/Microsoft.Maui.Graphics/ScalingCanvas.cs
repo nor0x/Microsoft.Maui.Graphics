@@ -137,6 +137,11 @@ namespace Microsoft.Maui.Graphics
 			_canvas.DrawImage(image, x * _scaleX, y * _scaleY, width * _scaleX, height * _scaleY);
 		}
 
+		public void DrawImage(IImage image, Rect src, Rect dst)
+		{
+			_canvas.DrawImage(image, src, dst * _scaleX);
+		}
+
 		public void DrawRectangle(float x, float y, float width, float height)
 		{
 			_canvas.DrawRectangle(x * _scaleX, y * _scaleY, width * _scaleX, height * _scaleY);
