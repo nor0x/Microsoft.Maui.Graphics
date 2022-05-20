@@ -846,14 +846,13 @@ namespace Microsoft.Maui.Graphics.Skia
 			if (bitmap != null)
 			{
 				var scaleX = CurrentState.ScaleX < 0 ? -1 : 1;
-				var scaleY = CurrentState.ScaleY < 0 ? -1 : 1;
 
 				_canvas.Save();
 				//canvas.Scale (scaleX, scaleY);
 
-				dst *= scaleX;
+				destRect *= scaleX;
 				var paint = CurrentState.GetImagePaint(1, 1);
-				_canvas.DrawBitmap(bitmap, srcRect, destRect, paint);
+				_canvas.DrawBitmap(bitmap, srcRect.AsSKRect(), destRect.AsSKRect(), paint);
 				paint?.Dispose();
 				_canvas.Restore();
 			}
