@@ -93,7 +93,7 @@ namespace Microsoft.Maui.Graphics
 
 		public  void DrawImage(IImage image, float x, float y, float width, float height);
 
-		public  void DrawImage(IImage image, Rect srcRect, Rect destRect);
+		public  void DrawImage(IImage image, RectF srcRect, RectF destRect);
 
 		public SizeF GetStringSize(string value, IFont font, float fontSize);
 

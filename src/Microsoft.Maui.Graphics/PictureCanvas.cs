@@ -278,7 +278,7 @@ namespace Microsoft.Maui.Graphics
 			_commands.Add(canvas => canvas.DrawImage(image, x, y, width, height));
 		}
 
-		public void DrawImage(IImage image, Rect srcRect, Rect destRect)
+		public void DrawImage(IImage image, RectF srcRect, RectF destRect)
 		{
 			_commands.Add(canvas => canvas.DrawImage(image, src, dst));
 		}

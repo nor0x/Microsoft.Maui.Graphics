@@ -137,7 +137,7 @@ namespace Microsoft.Maui.Graphics
 			_canvas.DrawImage(image, x * _scaleX, y * _scaleY, width * _scaleX, height * _scaleY);
 		}
 
-		public void DrawImage(IImage image, Rect srcRect, Rect destRect)
+		public void DrawImage(IImage image, RectF srcRect, RectF destRect)
 		{
 			_canvas.DrawImage(image, src, dst * _scaleX);
 		}

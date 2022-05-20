@@ -232,7 +232,7 @@ namespace Microsoft.Maui.Graphics
 		public abstract void SetFillPaint(Paint paint, RectF rectangle);
 
 		public abstract void DrawImage(IImage image, float x, float y, float width, float height);
-		public abstract void DrawImage(IImage image, Rect srcRect, Rect destRect);
+		public abstract void DrawImage(IImage image, RectF srcRect, RectF destRect);
 
 		public virtual bool RestoreState()
 		{
