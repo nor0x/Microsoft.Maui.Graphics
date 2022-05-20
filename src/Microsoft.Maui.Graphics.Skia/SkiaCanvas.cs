@@ -836,6 +836,29 @@ namespace Microsoft.Maui.Graphics.Skia
 			}
 		}
 
+		public override void DrawImage(
+			IImage image,
+			RectF srcRect,
+			RectF destRect)
+		{
+			var skiaImage = image as SkiaImage;
+			var bitmap = skiaImage?.PlatformRepresentation;
+			if (bitmap != null)
+			{
+				var scaleX = CurrentState.ScaleX < 0 ? -1 : 1;
+				var scaleY = CurrentState.ScaleY < 0 ? -1 : 1;
+
+				_canvas.Save();
+				//canvas.Scale (scaleX, scaleY);
+
+				dst *= scaleX;
+				var paint = CurrentState.GetImagePaint(1, 1);
+				_canvas.DrawBitmap(bitmap, srcRect, destRect, paint);
+				paint?.Dispose();
+				_canvas.Restore();
+			}
+		}
+
 		public override void ClipRectangle(
 			float x,
 			float y,
